@@ -89,9 +89,9 @@ namespace AssetPackage
         /// </summary>
         ///
         /// <returns>
-        /// A List&lt;String&gt;
+        /// An array of filenames.
         /// </returns>
-        public List<String> Files()
+        public String[] Files()
         {
             return dataStorage.Files();
         }

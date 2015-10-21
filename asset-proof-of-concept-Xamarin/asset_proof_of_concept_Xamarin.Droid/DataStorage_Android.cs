@@ -98,15 +98,15 @@ namespace DataStorage.Droid
         /// </summary>
         ///
         /// <returns>
-        /// A List&lt;string&gt;
+        /// An array of filenames.
         /// </returns>
-        public List<string> Files()
+        public String[] Files()
         {
             string path = CreatePathToFile(String.Empty);
 
             return Directory.GetFiles(path).ToList().ConvertAll(new Converter<String, String>(
                             p => p.Replace(path + Path.DirectorySeparatorChar, "")
-                        )).ToList();
+                        )).ToArray();
         }
 
         /// <summary>

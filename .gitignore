@@ -1,0 +1,12 @@
+*.cache
+*.csproj.user
+asset-proof-of-concept-Xamarin/asset_proof_of_concept_Xamarin/obj/*
+asset-proof-of-concept-Xamarin/asset_proof_of_concept_Xamarin/bin/*
+asset-proof-of-concept-Xamarin/asset_proof_of_concept_Xamarin.Droid/obj/*
+asset-proof-of-concept-Xamarin/asset_proof_of_concept_Xamarin.Droid/bin/*
+asset-proof-of-concept-Xamarin/asset_proof_of_concept_Xamarin.iOS/obj/*
+asset-proof-of-concept-Xamarin/asset_proof_of_concept_Xamarin.iOS/bin/*
+asset-proof-of-concept-Xamarin/asset_proof_of_concept_Xamarin.WinPhone/obj/*
+asset-proof-of-concept-Xamarin/asset_proof_of_concept_Xamarin.WinPhone/bin/*
+/packages
+.vs/asset-proof-of-concept-Xamarin/v14/.suo
