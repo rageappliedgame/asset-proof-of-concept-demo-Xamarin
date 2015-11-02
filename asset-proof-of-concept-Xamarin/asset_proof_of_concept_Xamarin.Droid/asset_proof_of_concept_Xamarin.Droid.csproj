@@ -67,7 +67,8 @@
     <Reference Include="RageAssetManager">
       <HintPath>..\..\..\..\..\Visual Studio 2013\Projects\asset-proof-of-concept-demo_CSharp\RageAssets\bin\Debug\RageAssetManager.dll</HintPath>
     </Reference>
-    <Reference Include="RageAssets">
+    <Reference Include="RageAssets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Visual Studio 2013\Projects\asset-proof-of-concept-demo_CSharp\RageAssets\bin\Debug\RageAssets.dll</HintPath>
     </Reference>
     <Reference Include="System" />

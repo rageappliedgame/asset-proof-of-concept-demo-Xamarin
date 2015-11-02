@@ -10,3 +10,4 @@ asset-proof-of-concept-Xamarin/asset_proof_of_concept_Xamarin.WinPhone/obj/*
 asset-proof-of-concept-Xamarin/asset_proof_of_concept_Xamarin.WinPhone/bin/*
 /packages
 .vs/asset-proof-of-concept-Xamarin/v14/.suo
+*.csdat

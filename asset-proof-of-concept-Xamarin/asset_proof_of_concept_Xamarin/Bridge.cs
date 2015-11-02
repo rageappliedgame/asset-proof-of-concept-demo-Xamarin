@@ -13,7 +13,7 @@ namespace AssetPackage
     /// <summary>
     /// A bridge.
     /// </summary>
-    class Bridge : IBridge, ILogger, IDataStorage, IDataArchive
+    class Bridge : IBridge, ILogger, IDataStorage, IDataArchive, IDefaultSettings
     {
         /// <summary>
         /// Initializes a new instance of the AssetPackage.Bridge class.
@@ -151,6 +151,69 @@ namespace AssetPackage
         public bool Archive(string fileId)
         {
             return dataArchive.Archive(fileId);
+        }
+
+        /// <summary>
+        /// Derive asset name.
+        /// </summary>
+        ///
+        /// <param name="Class"> The class. </param>
+        /// <param name="Id">    The identifier. </param>
+        ///
+        /// <returns>
+        /// A string.
+        /// </returns>
+        private string DeriveAssetName(string Class, string Id)
+        {
+            return string.Format("{0}AppSettings", Class);
+        }
+
+        /// <summary>
+        /// Query if 'Class' has default settings.
+        /// </summary>
+        ///
+        /// <param name="Class"> The class. </param>
+        /// <param name="Id">    The identifier. </param>
+        ///
+        /// <returns>
+        /// true if default settings, false if not.
+        /// </returns>
+        public bool HasDefaultSettings(string Class, string Id)
+        {
+            String fn = DeriveAssetName(Class, Id) + ".xml";
+
+            return dataStorage.Exists(fn);
+        }
+
+        /// <summary>
+        /// Loads default settings.
+        /// </summary>
+        ///
+        /// <param name="Class"> The class. </param>
+        /// <param name="Id">    The identifier. </param>
+        ///
+        /// <returns>
+        /// The default settings.
+        /// </returns>
+        public string LoadDefaultSettings(string Class, string Id)
+        {
+            String fn = DeriveAssetName(Class, Id) + ".xml";
+
+            return dataStorage.Load(fn);
+        }
+
+        /// <summary>
+        /// Saves a default settings.
+        /// </summary>
+        ///
+        /// <param name="Class">    The class. </param>
+        /// <param name="Id">       The identifier. </param>
+        /// <param name="fileData"> Information describing the file. </param>
+        public void SaveDefaultSettings(string Class, string Id, string fileData)
+        {
+            String fn = DeriveAssetName(Class, Id) + ".xml";
+
+            dataStorage.Save(fn, fileData);
         }
 
         #endregion
